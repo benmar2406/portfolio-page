@@ -11,16 +11,17 @@
     #title {
         font-size: 1.5rem;
         text-align: center;
+        margin: 2rem;
     }
     .nav-link {          
         margin: 10px;
         padding: 10px;
-        border: 3px solid white;
+        border: 3px solid var(--white);
         width:fit-content;
         transition: all 0.3s;
     }
 
     .nav-link:hover {          
-        background-color: white;
+        background-color: var(--white);
     }
 </style>

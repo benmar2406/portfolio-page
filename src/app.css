@@ -12,6 +12,12 @@
   font-style: bold;
 }
 
+:root {
+    --background: #252526;
+    --white: #fffde7;
+    --accent: #5F9EA0;
+}
+
 
 html, body {
   height: 100%; 
@@ -20,13 +26,15 @@ html, body {
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: 'Mono Space', 'Courier New', Courier, monospace;
   background-color: #252526;
-  color: white;
+  color: var(--white);
   font-size: 17px;
   padding: 0% 5%;
-  max-width: 2160px;
+  max-width: 2000px;
   min-height: fit-content;
   height: 100%;
   margin: auto;
@@ -35,28 +43,25 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 
  a:link {
-  color: white;
+  color: wvar(--white)hite;
 }
   
 a:visited {
-  color: white;
+  color: var(--white);
 }
   
 a:hover {
-  color:#5F9EA0;
+  color: var(--accent);
   font-weight: bold;  
 }
   
 a:active {
-  color:#5F9EA0;
+  color: var(--accent);
 } 
-
-
-
 
 .navigation-bar {
   display: flex;
@@ -78,7 +83,7 @@ a:active {
   left: 50%;
   height: 70px;
   z-index: 1;
-  background-color: #252526;
+  background-color: var(--background);
   transform: translateX(-50%);
   z-index: 6;
 }

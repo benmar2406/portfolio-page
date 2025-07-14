@@ -1,0 +1,35 @@
+     [
+        { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project1.png",
+            "slug": "project-1"
+        },
+
+         { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project2.png",
+            "slug": "project-2"
+        },
+        { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project1.png",
+            "slug": "project-1"
+        },
+
+         { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project2.png",
+            "slug": "project-2"
+        },
+        { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project1.png",
+            "slug": "project-1"
+        },
+
+         { 
+            "title": "Das große Testprojekt",
+            "image": "/images/preview/project2.png",
+            "slug": "project-2"
+        }
+    ]
