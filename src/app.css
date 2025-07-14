@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Mono Space';
+  src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mono Space';
+  src: url('/fonts/SpaceMono-Bold.ttf') format('truetype-variations');
+  font-weight: 800;
+  font-style: bold;
+}
+
+
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mono Space', 'Courier New', Courier, monospace;
+  background-color: #252526;
+  color: white;
+  font-size: 17px;
+  padding: 0% 5%;
+  max-width: 2160px;
+  min-height: fit-content;
+  height: 100%;
+  margin: auto;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ a:link {
+  color: white;
+}
+  
+a:visited {
+  color: white;
+}
+  
+a:hover {
+  color:#5F9EA0;
+  font-weight: bold;  
+}
+  
+a:active {
+  color:#5F9EA0;
+} 
+
+
+
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+.fixed-navigation-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 70px;
+  z-index: 1;
+  background-color: #252526;
+  transform: translateX(-50%);
+  z-index: 6;
+}
