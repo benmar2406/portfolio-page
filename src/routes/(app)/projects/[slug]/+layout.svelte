@@ -1,6 +1,5 @@
 <script>
-	let { loadedProjects, children } = $props();
-	$inspect(loadedProjects)
+	let { children } = $props();
 </script>
 
 <div class="layout">
