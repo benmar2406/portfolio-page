@@ -9,7 +9,6 @@
     const handleVideoSelect = (index) => {
         selectedVideo = videos[index][1];
         videoElement.autoplay = true;
-
     } 
 
 </script>
@@ -73,6 +72,7 @@
         background-color: transparent;
         color: var(--white);
         transition: all ease 0.6s;
+        height: 3rem;
 
     }
 
