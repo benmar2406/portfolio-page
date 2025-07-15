@@ -4,11 +4,13 @@
     let selectedVideo = $state(videos[0][1]);
     $inspect(videos[0][1]);
     let videoElement = $state();
+    let selectedIndex = $state(0);
 
 
     const handleVideoSelect = (index) => {
         selectedVideo = videos[index][1];
         videoElement.autoplay = true;
+        selectedIndex = index;
     } 
 
 </script>
@@ -29,8 +31,8 @@
                 <button 
                     aria-label="playlist-button" 
                     class="playlist-button"
+                    class:active={selectedIndex === index}                    
                     onclick={() => handleVideoSelect(index)}
-
                     >{video[0]}
                 
                 </button>
@@ -43,7 +45,7 @@
 
 <style>
     .video-player {
-        grid-column: 2 / 12;
+        grid-column: 2 / 13;
         height: fit-content;
     }
 
@@ -73,16 +75,11 @@
         color: var(--white);
         transition: all ease 0.6s;
         height: 3rem;
-
     }
 
-    .playlist-button:hover {
+    .playlist-button:hover, button.active {
         background-color: var(--accentOpaque);
         font-size: 0.87rem;
-    }
-
-
-
-    
+    } 
 
 </style>

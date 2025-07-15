@@ -13,10 +13,8 @@ let { title, content  } = $props();
 
     .project-description {
         max-width: 750px;
-        margin: auto;
-        padding: 10px 20px;
         margin-bottom: 4rem;
-        border: 3px solid var(--white);
+        align-self: start;
     }
     
 </style>

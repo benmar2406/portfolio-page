@@ -1,14 +1,12 @@
 <script>
-	/*
-  import StandardLayout from '$lib/layouts/StandardLayout.svelte';
-  import Carousel from '$lib/components/Carousel.svelte';
-  import TechStack from '$lib/components/TechStack.svelte';
-  */
- import ProjectArticle from "$lib/components/projectDetails/ProjectArticle.svelte";
- import VideoPlayer from "$lib/components/projectDetails/VideoPlayer.svelte";
+	import ProjectArticle from "$lib/components/projectDetails/ProjectArticle.svelte";
+	import VideoPlayer from "$lib/components/projectDetails/VideoPlayer.svelte";
+	import ImageAndtext from "$lib/components/projectDetails/ImageAndtext.svelte";
+	import PosterGallery from "$lib/components/projectDetails/posterGallery.svelte";
 
 	let { data } = $props();
 	let loadedProject = $derived(data.project);
+	$inspect(loadedProject.data.posterUrls)
 
 </script>
 {#if loadedProject}
@@ -24,11 +22,17 @@
 				videos={loadedProject.data.videos} 
 			/>
 		{/if}
+		{#if comp === 'imgLeftTextRight'}
+			<ImageAndtext 
+				image={loadedProject.data.imgLeftTextRight.img} 
+				text={loadedProject.data.imgLeftTextRight.text}
+				altText={loadedProject.data.imgLeftTextRight.altText}
+			/>
+		{/if}
+		{#if comp === 'posterGallery'}
+			<PosterGallery 
+				posters={loadedProject.data.posterUrls} 
+			/>
+		{/if}
 	{/each}
-
-<!---
-	  {#if comp === 'article'} <ProjectArticle /> {/if}
-      {#if comp === 'carousel'} <Carousel /> {/if}
-      {#if comp === 'techStack'} <TechStack stack={loadedProject.data.stack} /> {/if}
--->
 {/if}

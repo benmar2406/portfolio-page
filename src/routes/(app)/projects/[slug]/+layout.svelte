@@ -7,13 +7,14 @@
 </section>
 
 <style>
-@media screen and  (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
 	.project-page-layout {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		margin: auto;
 		gap: 1rem;
 		padding: 1rem;
+		align-items: start;
 	}
 }
 

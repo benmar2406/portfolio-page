@@ -68,3 +68,8 @@ a:active {
   color: var(--accent);
 } 
 
+article {
+  padding: 0.6rem 1.3rem;
+  border: 3px solid var(--white);
+}
+
