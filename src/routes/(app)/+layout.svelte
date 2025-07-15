@@ -4,11 +4,13 @@
     import Footer from '$lib/components/Footer.svelte';
     let { children } = $props();
 </script>
-<main class="layout-grid">
+<div class="layout-grid">
     <Header />
-    {@render children()}
+    <main>
+        {@render children()}
+    </main>
     <Footer/>
-</main>
+</div>
 
 <style>
     .layout-grid {

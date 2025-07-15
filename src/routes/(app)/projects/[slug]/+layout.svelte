@@ -2,18 +2,19 @@
 	let { children } = $props();
 </script>
 
-<div class="layout">
-	<main>
-		{@render children()}
-	</main>
-</div>
+<section class="project-page-layout">
+	{@render children()}
+</section>
 
 <style>
-	@media (min-width: 640px) {
-		.layout {
-			display: grid;
-			gap: 2em;
-			grid-template-columns: 1fr 16em;
-		}
+@media screen and  (min-width: 1000px) {
+	.project-page-layout {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin: auto;
+		gap: 1rem;
+		padding: 1rem;
 	}
+}
+
 </style>

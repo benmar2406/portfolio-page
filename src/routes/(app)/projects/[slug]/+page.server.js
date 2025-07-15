@@ -6,7 +6,6 @@ export async function load({ fetch, params }) {
     const projects = await res.json();
 
     const project = projects.find(p => p.slug === params.slug);
-    console.log(project)
 
     if (!project) {
         throw error(404, 'Project not found');

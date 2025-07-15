@@ -16,6 +16,7 @@
     --background: #252526;
     --white: #fffde7;
     --accent: #5F9EA0;
+    --accentOpaque: rgba(95, 158, 160, 0.8)
 }
 
 
@@ -40,6 +41,10 @@ body {
   margin: auto;
 }
 
+button {
+  font-family: 'Mono Space';
+  cursor: pointer;
+}
 
 a {
   text-decoration: none;
@@ -63,27 +68,3 @@ a:active {
   color: var(--accent);
 } 
 
-.navigation-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  z-index: 5;
-}
-
-.fixed-navigation-bar {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90%;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  height: 70px;
-  z-index: 1;
-  background-color: var(--background);
-  transform: translateX(-50%);
-  z-index: 6;
-}

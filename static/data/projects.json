@@ -1,35 +1,34 @@
      [
-        { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project1.png",
-            "slug": "project-1"
+        {
+            "slug": "project-1",
+            "name": "Plakat: Terre Des Femmes",
+            "previewImage": "/images/projects-preview/prev_terredesfemmes.jpg",
+            "components": ["poster", "techStack"],
+            "data": {
+                "singleImageUrl": "/images/projects/151101_terre de femmes_plakat.jpg",
+                "stack": ["Adobe InDesign"]            }
+            
         },
 
-         { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project2.png",
-            "slug": "project-2"
-        },
-        { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project1.png",
-            "slug": "project-1"
-        },
-
-         { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project2.png",
-            "slug": "project-2"
-        },
-        { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project1.png",
-            "slug": "project-1"
-        },
-
-         { 
-            "title": "Das große Testprojekt",
-            "image": "/images/preview/project2.png",
-            "slug": "project-2"
+        {
+            "slug": "project-2",
+            "name": "Mythos Ökonomie",  
+            "previewImage": "/images/projects-preview/prev_mythos.jpg",
+            "article": {
+                "title": "Mythos Ökonomie",
+                "content": "<p>Wirtschaftswachstum, freier Markt, Globalisierung und soziale Ungleichheit: Wie lassen sich sozioökonomische Prozesse deuten und hinterfragen?</p><p>»Mythos Ökonomie« bietet ein Bildungsangebot über das bestehende Wirtschaftssystem und dessen soziale Auswirkungen. Vermeintlich allgemeingültige Perspektiven, Denkmuster und »Alltagsreligionen« werden infrage gestellt.</p>"
+            },
+            "components": ["article", "videoGallery", "imgLeftTextRight", "posterGallery", "additionalArticle", "imageGallery", "techStack"],
+            "data": {
+                "videos": [["Der Weg in die Alternativlosigkeit", "/videos/alternativlos_1.mp4"], ["Der Weg in die Alternativlosigkeit - Teil 2", "/videos/alternativlos_2.mp4"], ["Der Weg in die Alternativlosigkeit - Teil 3", "/videos/alternativlos_3.mp4"], ["Freihandel", "/videos/freihandel.mp4"], ["Wachstum und Wohlstand", "/videos/wachstum.mp4"]],
+                "imgLeftTextRight": {
+                    "img": "url",   
+                    "text": "<h3 class='sub-title'>Buch: Manipulation oder Information? 2017 | ISBN: 978-3-89965-757-9</h3><p>»Eine fundierte, hintergrundgestützte öffentliche Meinungsbildung scheint jedoch nachgerade unmöglich, weil Themen und Inhalte oft verkürzt und häufig ohne größeren Kontext dargestellt werden.</p><p>Als Ausweg verfolgt Martinis Untersuchung einen innovativen gestalterischen Ansatz: Wie ließe sich ein visuelles Angebot zur Wissensvermittlung über das bestehende Wirtschaftssystem und dessen soziale Auswirkungen schaffen, sodass offene und komplexe Diskurse ermöglicht werden?«</p><p><a class='external-link'>Zum Buch</a></p>"
+                },
+                "posterUrls": [],
+                "additionalArticle": "Ziel des Projekts war das Schaffen eines demokratischen Raums, der Dialoge und Diskurse ermöglicht und die RezipientInnen so bei der eigenen Urteilsbildung und Positionierung unterstützt.",
+                "imageGalleryUrls": [],
+                "stack": ["Adobe InDesign", "Adobe After Effects", "Adobe Illustrator", "Excel"]
+            }
         }
     ]
