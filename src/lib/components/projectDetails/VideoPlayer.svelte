@@ -1,14 +1,10 @@
 <script>
     import { onMount } from "svelte";
     let { videos } = $props();
-    let selectedVideo = $state(videos[0][1]);
-    $inspect(videos[0][1]);
     let videoElement = $state();
     let selectedIndex = $state(0);
 
-
     const handleVideoSelect = (index) => {
-        selectedVideo = videos[index][1];
         videoElement.autoplay = true;
         selectedIndex = index;
     } 
@@ -20,7 +16,7 @@
     <video 
         bind:this={videoElement}
         class="video" 
-        src={selectedVideo}
+        src={videos[selectedIndex][1]}
         controls
         >Dies Video kann in Ihrem Browser nicht wiedergegeben werden.
             <track kind="captions">

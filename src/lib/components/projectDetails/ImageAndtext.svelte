@@ -14,8 +14,8 @@
 <style>
 
     .image-text-container {
-        position: relative;
         margin: 4rem 0;
+        min-height: fit-content;
     }
 
     .image-container-left {
@@ -26,10 +26,10 @@
     .image-container-left img {
         object-fit: contain;
         width: 300px;
+        margin-bottom: 2rem;
     }
 
     .text-right {
-        position: absolute;
         top: 50%;
         background-color: var(--background);
     }
@@ -41,7 +41,9 @@
             grid-column: 1 / 13;
             width: 100%;
             position: static;
+            min-height: fit-content;
         }
+
         .text-right {
             margin-left: 2rem;
             margin-right: 0;
