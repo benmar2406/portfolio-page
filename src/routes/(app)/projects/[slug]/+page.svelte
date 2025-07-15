@@ -3,6 +3,7 @@
 	import VideoPlayer from "$lib/components/projectDetails/VideoPlayer.svelte";
 	import ImageAndtext from "$lib/components/projectDetails/ImageAndtext.svelte";
 	import PosterGallery from "$lib/components/projectDetails/posterGallery.svelte";
+	import AdditionalProjectArticle from "$lib/components/projectDetails/AdditionalProjectArticle.svelte";
 
 	let { data } = $props();
 	let loadedProject = $derived(data.project);
@@ -32,6 +33,11 @@
 		{#if comp === 'posterGallery'}
 			<PosterGallery 
 				posters={loadedProject.data.posterUrls} 
+			/>
+		{/if}
+		{#if comp === 'additionalArticle'}
+			<AdditionalProjectArticle 
+				content={loadedProject.data.additionalArticle} 
 			/>
 		{/if}
 	{/each}

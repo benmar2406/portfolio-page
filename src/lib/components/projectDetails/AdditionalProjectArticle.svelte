@@ -1,15 +1,11 @@
 <script>
-let { title, content  } = $props();
+let { content  } = $props();
 </script>
 
 <article class="project-description">
-    <h2>{title}</h2>
-    <div>{@html content}</div>
+    {@html content}
 </article>
 <style>
-    h2 {
-        font-size: 1.8rem;
-    }
 
     .project-description {
         max-width: 750px;

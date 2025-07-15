@@ -20,11 +20,12 @@
             class="image-container"
             class:active={selectedIndex === index} 
             onclick={() => handlePosterSelect(index)}
-            transition:fade={{duration: 2000}}
+            
         >
             <img 
                 class="poster" 
                 src={poster}
+                transition:fade={{duration: 2000}}
             >
         </div>
     {/each}
@@ -79,15 +80,6 @@
         height: auto;
         overflow: hidden;
    }
-
-
-
-    @media screen and (min-width: 580px) {
-        .carousel-container {
-            grid-column: 7 / 13;
-         
-        }
-    }
     
 
 </style>
