@@ -12,6 +12,7 @@ let { title, content  } = $props();
     }
 
     .project-description {
+        margin: 4rem 0;
         max-width: 750px;
         margin-bottom: 4rem;
         align-self: start;
