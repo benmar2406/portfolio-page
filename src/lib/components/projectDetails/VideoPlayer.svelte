@@ -13,15 +13,7 @@
 
 
 <div class="video-player">
-    <video 
-        bind:this={videoElement}
-        class="video" 
-        src={videos[selectedIndex][1]}
-        controls
-        >Dies Video kann in Ihrem Browser nicht wiedergegeben werden.
-            <track kind="captions">
-        </video>
-        <ul class="playlist">
+    <ul class="playlist">
         {#each videos as video, index}
             <li>
                 <button 
@@ -36,13 +28,21 @@
             
         {/each}
         </ul>
+    <video 
+        bind:this={videoElement}
+        class="video" 
+        src={videos[selectedIndex][1]}
+        controls
+        >Dies Video kann in Ihrem Browser nicht wiedergegeben werden.
+            <track kind="captions">
+        </video>
 </div>
 
 
 <style>
     .video-player {
-        grid-column: 2 / 13;
         height: fit-content;
+        margin: 8rem auto;
     }
 
     .video {
@@ -54,6 +54,7 @@
         padding: 0;
         padding-left: 0; 
         margin-top: 0.5rem;
+        height: fit-content;
     }
 
     .playlist li {
@@ -70,12 +71,27 @@
         background-color: transparent;
         color: var(--white);
         transition: all ease 0.6s;
-        height: 3rem;
+        min-height: 4rem;
     }
 
     .playlist-button:hover, button.active {
         background-color: var(--accentOpaque);
         font-size: 0.87rem;
     } 
+@media screen and (min-width: 900px) {
+    .video-player {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    .video {
+        grid-column: 4 / 13;
+    }
+
+    .playlist {
+        grid-column: 1 / 4;
+    }
+}
 
 </style>

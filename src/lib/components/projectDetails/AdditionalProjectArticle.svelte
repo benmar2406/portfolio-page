@@ -9,8 +9,7 @@ let { content  } = $props();
 
     .project-description {
         max-width: 750px;
-        margin-bottom: 4rem;
-        align-self: start;
+        margin-bottom: 4rem;        
     }
     
 </style>

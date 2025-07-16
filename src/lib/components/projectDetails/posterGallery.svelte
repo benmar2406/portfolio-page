@@ -2,16 +2,20 @@
     import { fade } from "svelte/transition";
     let { posters } = $props();
     let selectedIndex = $state(0);
-    let selectedPoster = $state(posters[0]);
 
     const handlePosterSelect = (index) => {
         selectedIndex = index;
     }
+
+    $inspect(posters[selectedIndex][0])
+
 </script>
 
+<!---->
 <div class="carousel-container">
 <img 
-    src={posters[selectedIndex]} 
+    src={posters[selectedIndex][0]} 
+    alt={posters[selectedIndex][1]}
     class="selected-poster">
 <div class="carousel">
     {#if posters.length > 1}
@@ -20,11 +24,13 @@
             class="image-container"
             class:active={selectedIndex === index} 
             onclick={() => handlePosterSelect(index)}
+            onKeydown={() => handlePosterSelect(index)}
             
         >
             <img 
                 class="poster" 
-                src={poster}
+                src={poster[0]}
+                alt={poster[1]}
                 transition:fade={{duration: 2000}}
             >
         </div>
@@ -37,24 +43,25 @@
     .carousel-container {
         display: flex;
         flex-direction: column;
-        margin: auto;
-        display: block;
+        margin: 4rem auto;
     }
 
     .selected-poster{
         border-radius: 3rem;
-        width: 96%;
+        max-width:100%;
+        height: 85vh;
         margin: auto;
         display: block;
     }
 
     .carousel {
-        width: 90%;
+        width: 100%;
         display: flex;
         gap: 0.7rem;
         justify-content: center;
         margin: 1rem auto;
         overflow: hidden;
+        height: 5rem;
     }
 
    .image-container {
