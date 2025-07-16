@@ -12,6 +12,7 @@
 	let { data } = $props();
 	let loadedProject = $derived(data.project);
 
+
 </script>
 {#if loadedProject}	
 	{#each loadedProject.components as comp}
@@ -21,10 +22,11 @@
 				content={loadedProject.article.content} 
 			/>
 		{/if}
-		{#if comp === 'projectUrl'}
+		{#if comp === 'projectUrls'}
 			<ProjectUrlContainer 
 				urlTitle={"Test"}
-				urls={[["www.test.de", "test"], ["www.test.de", "test"]]} 
+				urls={loadedProject.data.projectUrls}
+				github={loadedProject.data.github}
 			/>
 		{/if}
 		{#if comp === 'videoGallery'}

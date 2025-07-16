@@ -39,18 +39,6 @@
         z-index: 6;
     }
 
-    .nav-link {          
-        margin: 0.1rem;
-        padding: 10px;
-        border: 3px solid var(--white);
-        width:fit-content;
-        transition: all 0.3s;
-    }
-
-    .nav-link:hover {          
-        background-color: var(--white);
-    }
-
 
     @media screen and (min-width: 800px) {
         .navigation-bar {

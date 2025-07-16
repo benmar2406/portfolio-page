@@ -6,7 +6,7 @@
 <div class="project-card">
     <img src={image} alt={title} />
     <a href="/projects/{slug}" class="project-link">
-        <p>{title}</p>
+        <p class="project-title">{title}</p>
     </a>
 </div>
 
@@ -35,15 +35,20 @@
         width: 100%;
         height: 100%;
         cursor: pointer;
-        color: white;
+        color: var(--white);
         display: flex;
         align-items: center;
         justify-content: center;
         transition: opacity 0.8s; 
+        text-align: center;
     }
 
     .project-link:hover {
         opacity: 0.9;
+    }
+
+    .project-title {
+        padding: 0.4rem;
     }
 
 

@@ -1,4 +1,3 @@
 <footer id="imprint-container">
-    <a>Impressum</a>
+    <a href="/imprint">Impressum</a>
 </footer>
-

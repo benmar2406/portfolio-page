@@ -1,5 +1,5 @@
 <footer id="imprint-container">
-    <a>Impressum</a>
+    <a target="_blank"  href="/imprint">Impressum</a>
 </footer>
 
 <style>

@@ -1,0 +1,29 @@
+[
+    {
+        "textContent": true,
+        "title": "Benedikt Martini",
+        "content": "Freelance Informationsdesigner based in Frankfurt a.M."
+    },
+
+    {  
+         "textContent": true,
+        "area": "description",
+        "title": "About",
+        "content": "Daten veranschaulichen – von klaren Visualisierungen und interaktiven Infografiken über dynamische Erklärfilme bis hin zu Scrollytelling. Web Development und kreatives Storytelling, um Informationen lebendig zu erzählen und zielgerichtet sowie effizient zu verbreiten."
+    },
+
+    {   
+        "textContent": false,
+        "area": "skills",
+        "title": "Doing",
+        "content": ["Informationsdesign", "Datenvisualisierung", "Web Development", "Datenanalyse", "Storytelling"]
+    },
+    {   
+        "textContent": false,
+        "area": "stack",
+        "title": "Using",
+        "content": ["Javascript", "HTML/CSS", "Python", "Svelte", "React", "Node js", "Visual Studio Code", "Adobe Creative Suite"]
+    }
+
+
+]

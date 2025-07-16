@@ -1,22 +1,45 @@
 <script>
     import { fade } from "svelte/transition";
+    import { innerWidth } from "svelte/reactivity/window";
     let { posters } = $props();
     let selectedIndex = $state(0);
+    let imageActive= $state(false);
+   let selectedImageSrc = $state(null);
 
     const handlePosterSelect = (index) => {
         selectedIndex = index;
     }
 
-    $inspect(posters[selectedIndex][0])
+    $inspect(innerWidth)
 
+    const handleImageClick = (src) => {
+    if (!imageActive    ) {
+      selectedImageSrc = src;
+      imageActive = true;
+      document.body.style.overflow = 'hidden'
+    }
+  }
+
+  const closeResizedImage = () => {
+    if (imageActive) {
+            imageActive = false;
+            selectedImageSrc = null;
+            document.body.style.overflow = 'auto'
+        }    
+  }
 </script>
 
 <!---->
 <div class="carousel-container">
-<img 
-    src={posters[selectedIndex][0]} 
-    alt={posters[selectedIndex][1]}
-    class="selected-poster">
+<div class="selected-poster-container">
+    <img 
+        src={posters[selectedIndex][0]} 
+        alt={posters[selectedIndex][1]}
+        class="selected-poster"
+        onclick={() => handleImageClick(posters[selectedIndex][0])}
+    >
+</div>
+    
 <div class="carousel">
     {#if posters.length > 1}
     {#each posters as poster, index}
@@ -36,7 +59,21 @@
         </div>
     {/each}
     {/if}
-</div>
+    </div>
+    {#if imageActive}
+        <div 
+            class="overlay"
+            onclick={closeResizedImage}
+        >
+            <div class="image-scroll-wrapper">
+                <img 
+                    class="selected-image" 
+                    src={selectedImageSrc}
+                >
+            </div>
+        </div>
+    {/if}
+
 </div>
 
 <style>
@@ -46,12 +83,21 @@
         margin: 4rem auto;
     }
 
+    .carousel-container img {
+        display: block;
+    }
+
+    .selected-poster-container {
+        max-width: 85vw;
+        width: 400px;
+        border-radius: 3rem;
+        margin: auto;
+    }
+
     .selected-poster{
         border-radius: 3rem;
-        max-width:100%;
-        height: 85vh;
-        margin: auto;
-        display: block;
+        width: 100%;
+        object-fit: contain;
     }
 
     .carousel {
@@ -87,6 +133,33 @@
         height: auto;
         overflow: hidden;
    }
-    
+
+@media screen and (min-width: 900px) {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(37, 37, 38, 0.8);
+        z-index: 100;
+        overflow-y: auto;
+        display: block;
+        padding: 2rem 0;
+}
+
+}
+
+.image-scroll-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.selected-image {
+  max-width: 65vw;
+  height: auto;
+  display: block;
+}
+   
 
 </style>

@@ -13,11 +13,10 @@
 <style>
     .stack-container {
         padding: 1.3rem;
-        border: 3px solid var(--white);
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        margin: 4rem auto;
+        margin: 2rem auto;
         justify-content: center;
     }
 
@@ -31,7 +30,7 @@
 
     @media screen and (min-width: 600px) {
        .stack-container {
-            width: 600px;
+            max-width: 600px;
     }
 }
 </style>
