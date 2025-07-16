@@ -174,7 +174,7 @@
             "previewImage": "/images/projects-preview/prev_terredesfemmes.jpg",
             "components": ["posterGallery", "techStack"],
             "data": {
-                "posterUrls": ["/images/projects/151101_terre_de_femmes_plakat.jpg", "Plakat welches zeigt, dass in Deutschland jede 3. Frau Opfer körperlicher oder sexueller Gewalt war."],
+                "posterUrls": [["/images/projects/151101_terre_de_femmes_plakat.jpg", "Plakat welches zeigt, dass in Deutschland jede 3. Frau Opfer körperlicher oder sexueller Gewalt war."]],
                 "stack": ["Adobe InDesign"]            
             }
             

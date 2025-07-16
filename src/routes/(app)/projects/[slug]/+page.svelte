@@ -40,17 +40,19 @@
 					altText={loadedProject.data.imgLeftTextRight.altText}
 				/>
 			{/if}
-			<!--
+			
 			{#if comp === 'posterGallery'}
 				<PosterGallery 
 					posters={loadedProject.data.posterUrls} 
 				/>
 			{/if}
+			
 			{#if comp === 'additionalArticle'}
 				<AdditionalProjectArticle 
 					content={loadedProject.data.additionalArticle} 
 				/>
 			{/if}
+			
 			{#if comp === 'imageBoard'}
 				<ImageBoard 
 					images={loadedProject.data.imageUrls} 
@@ -58,8 +60,9 @@
 			{/if}
 			{#if comp === 'techStack'}
 				<TechStack 
-					stackitems={loadedProject.data.stack} 
+					stnpackitems={loadedProject.data.stack} 
 				/>
-			{/if}-->
+			{/if}
+			
 		{/each}
 	{/if}

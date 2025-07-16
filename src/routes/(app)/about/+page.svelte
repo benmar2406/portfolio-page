@@ -1,5 +1,7 @@
 <script>
     import TechStackContainer from "$lib/components/projectDetails/TechStackContainer.svelte";
+    export const prerender = true;
+
     let { data } = $props();
     let about = $derived(data.about);
 </script>
