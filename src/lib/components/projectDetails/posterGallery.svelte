@@ -90,6 +90,7 @@
         width: 400px;
         border-radius: 3rem;
         margin: auto;
+        cursor: pointer;
     }
 
     .selected-poster{
@@ -145,18 +146,17 @@
         display: block;
         padding: 2rem 0;
 }
+    .image-scroll-wrapper {
+    display: flex;
+    justify-content: center;
+    }
 
-}
+    .selected-image {
+    max-width: 65vw;
+    height: auto;
+    display: block;
+    }
 
-.image-scroll-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.selected-image {
-  max-width: 65vw;
-  height: auto;
-  display: block;
 }
    
 
