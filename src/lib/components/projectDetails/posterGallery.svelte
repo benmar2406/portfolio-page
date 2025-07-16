@@ -10,10 +10,8 @@
         selectedIndex = index;
     }
 
-    $inspect(innerWidth)
-
     const handleImageClick = (src) => {
-    if (!imageActive    ) {
+    if (!imageActive && innerWidth.current >= 900) {
       selectedImageSrc = src;
       imageActive = true;
       document.body.style.overflow = 'hidden'

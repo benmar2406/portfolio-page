@@ -26,7 +26,7 @@
 
     .fixed-navigation-bar {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 90%;
         position: fixed;
@@ -37,13 +37,6 @@
         background-color: var(--background);
         transform: translateX(-50%);
         z-index: 6;
-    }
-
-
-    @media screen and (min-width: 800px) {
-        .navigation-bar {
-            justify-content: space-evenly;
-        }
     }
 
 </style>

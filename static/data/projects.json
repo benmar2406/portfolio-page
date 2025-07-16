@@ -1,22 +1,4 @@
      [ 
-        {
-            "slug": "project-11",
-            "name": "Website: Portfolio Page",  
-            "previewImage": "/images/projects-preview/prev_portfolio.png",
-            "article": {
-                "title": "Portfolio Page",
-                "content": "<p>Die Projektseiten werden aus einer hinterlegten Liste durch ein dynamisches und modularisiertes Projektlaylout automatisiert gerendert. Perspektivisch soll ein Headless CMS integriert werden.</p>"
-            },
-            "components": ["article", "projectUrls", "techStack"],
-            "data": {
-                "projectUrls": [
-                    ["Links", ["https://benediktmartini.de", "Zur Startseite"], ["https://github.com/benmar2406/portfolio-page", "Github"]]
-                ],
-                "github": true,
-                
-                "stack": ["Svelte"]
-            }
-        },
         
         {
             "slug": "project-10",
@@ -71,6 +53,26 @@
                 "stack": ["Svelte", "Mapbox Studio", "Mapbox GL JS", "D3", "Python", "pandas", "geopandas"]
             }
         },
+
+        {
+            "slug": "project-11",
+            "name": "Website: Portfolio Page",  
+            "previewImage": "/images/projects-preview/prev_portfolio.png",
+            "article": {
+                "title": "Portfolio Page",
+                "content": "<p>Die Projektseiten werden aus einer hinterlegten Liste durch ein dynamisches und modularisiertes Projektlaylout automatisiert gerendert. Perspektivisch soll ein Headless CMS integriert werden.</p>"
+            },
+            "components": ["article", "projectUrls", "techStack"],
+            "data": {
+                "projectUrls": [
+                    ["Links", ["/", "Zur Startseite"], ["https://github.com/benmar2406/portfolio-page", "Github"]]
+                ],
+                "github": true,
+                
+                "stack": ["Svelte"]
+            }
+        },
+
         {
             "slug": "project-6",
             "name": "Datenanalysen mit Python",  
