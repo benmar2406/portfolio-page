@@ -24,7 +24,7 @@
             "previewImage": "/images/projects-preview/prev_costsconsumption.png",
             "article": {
                 "title": "1kg: Costs of Consumption",
-                "content": "<p>Interaktive Informationsvisualisierung zum Thema Fleischproduktion und -konsum und den Auswirkungen auf Ressourcenverbrauch, Nahrungsmittelverfügbarkeit und Umwelt.</p>"
+                "content": "<p>Interaktive Informationsvisualisierung zum Thema Fleischproduktion und -konsum und den Auswirkungen auf Ressourcenverbrauch, Nahrungsmittelverfügbarkeit und Umwelt.</p><a href='https://www.informationisbeautifulawards.com/showcase/6896-1kg-the-costs-of-consumption' target='blank'><img class='award-label' style='width: 120px;' src='/images/projects/iibawards.png' alt='Information is Beautiful 2024 Longlist label'/></a>"
             },
             "components": ["article", "projectUrls", "techStack"],
             "data": {
@@ -158,7 +158,7 @@
                 "videos": [["Der Weg in die Alternativlosigkeit", "/videos/alternativlos_1.mp4"], ["Der Weg in die Alternativlosigkeit - Teil 2", "/videos/alternativlos_2.mp4"], ["Der Weg in die Alternativlosigkeit - Teil 3", "/videos/alternativlos_3.mp4"], ["Freihandel", "/videos/freihandel.mp4"], ["Wachstum und Wohlstand", "/videos/wachstum.mp4"]],
                 "imgLeftTextRight": {
                     "img": "/images/projects/Martini_Manipulation_oder_Information.png",   
-                    "text": "<h3 class='sub-title'>Buch: Manipulation oder Information? 2017 | ISBN: 978-3-89965-757-9</h3><p>»Eine fundierte, hintergrundgestützte öffentliche Meinungsbildung scheint jedoch nachgerade unmöglich, weil Themen und Inhalte oft verkürzt und häufig ohne größeren Kontext dargestellt werden.</p><p>Als Ausweg verfolgt Martinis Untersuchung einen innovativen gestalterischen Ansatz: Wie ließe sich ein visuelles Angebot zur Wissensvermittlung über das bestehende Wirtschaftssystem und dessen soziale Auswirkungen schaffen, sodass offene und komplexe Diskurse ermöglicht werden?«</p><p><a class='external-link'>Zum Buch</a></p>",
+                    "text": "<h3 class='sub-title'>Buch: Manipulation oder Information? 2017 | ISBN: 978-3-89965-757-9</h3><p>»Eine fundierte, hintergrundgestützte öffentliche Meinungsbildung scheint jedoch nachgerade unmöglich, weil Themen und Inhalte oft verkürzt und häufig ohne größeren Kontext dargestellt werden.</p><p>Als Ausweg verfolgt Martinis Untersuchung einen innovativen gestalterischen Ansatz: Wie ließe sich ein visuelles Angebot zur Wissensvermittlung über das bestehende Wirtschaftssystem und dessen soziale Auswirkungen schaffen, sodass offene und komplexe Diskurse ermöglicht werden?«</p><p><a href='https://www.vsa-verlag.de/nc/buecher/detail/artikel/manipulation-oder-information/' target='_blank' class='external-link'>Zum Buch</a></p>",
                     "altText": "Buchcover mit Infografik"
                 },
                 "posterUrls": [["/images/projects/1_poster_vermoegen_brd_large.jpg", "Plakat welches die Mengenverteilung des Vermögens in Deutschland zeigt, den obersten 10% gehört ein großer Anteil."], ["/images/projects/2_poster_vermoegen_weltweit_large.jpg"], ["/images/projects/3_poster_vermoegen_vergleich_large.jpg"],[ "/images/projects/5_poster_griechenland_kredite.jpg"]],

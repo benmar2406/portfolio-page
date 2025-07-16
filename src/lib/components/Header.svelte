@@ -39,4 +39,11 @@
         z-index: 6;
     }
 
+
+        @media screen and (min-width: 800px) {
+            .navigation-bar {
+                justify-content: space-evenly;
+            }
+        }
+
 </style>
