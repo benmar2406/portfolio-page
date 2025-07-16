@@ -1,4 +1,5 @@
-// src/routes/(app)/projects/[slug]/+page.server.js
+import { error } from '@sveltejs/kit';
+
 export const prerender = true;
 
 export async function load({ fetch, params }) {

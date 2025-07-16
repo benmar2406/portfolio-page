@@ -67,6 +67,7 @@
                 <img 
                     class="selected-image" 
                     src={selectedImageSrc}
+                    alt="vergrößertes Bild"
                 >
             </div>
         </div>

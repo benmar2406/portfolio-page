@@ -3,19 +3,18 @@
     import ProjectCard from "./ProjectCard.svelte";
 
     let { loadedProjects } = $props();
-        $inspect(loadedProjects)
 </script>
 
 
 <section class="project-gallery">
 {#if loadedProjects}
-{#each loadedProjects as project}
-    <ProjectCard 
-        title={project.name}
-        image={project.previewImage}
-        slug={project.slug}
-    />
-{/each}
+    {#each loadedProjects as project}
+        <ProjectCard 
+            title={project.name}
+            image={project.previewImage}
+            slug={project.slug}
+        />
+    {/each}
 {/if }
 </section>
 

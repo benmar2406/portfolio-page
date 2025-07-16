@@ -46,8 +46,8 @@
             "components": ["article", "projectUrls", "techStack"],
             "data": {
                 "projectUrls": [
-                    ["Mieten in Deutschland", ["/mieten", "Zur Karte"], ["https://github.com/benmar2406/rent-in-germany", "Github"]],
-                    ["Bienen (Skizze, in Progress", ["/bienen", "Zur Karte"], ["https://github.com/benmar2406/developement-biodiversity", "Github"]]
+                    ["Mieten in Deutschland", ["https://benediktmartini.de/mieten", "Zur Karte"], ["https://github.com/benmar2406/rent-in-germany", "Github"]],
+                    ["Bienen (Skizze, in Progress", ["https://benediktmartini.de/bienen", "Zur Karte"], ["https://github.com/benmar2406/developement-biodiversity", "Github"]]
                 ],
                 "github": true,
                 "stack": ["Svelte", "Mapbox Studio", "Mapbox GL JS", "D3", "Python", "pandas", "geopandas"]
@@ -175,7 +175,8 @@
             "components": ["posterGallery", "techStack"],
             "data": {
                 "posterUrls": ["/images/projects/151101_terre_de_femmes_plakat.jpg", "Plakat welches zeigt, dass in Deutschland jede 3. Frau Opfer körperlicher oder sexueller Gewalt war."],
-                "stack": ["Adobe InDesign"]            }
+                "stack": ["Adobe InDesign"]            
+            }
             
         }
 

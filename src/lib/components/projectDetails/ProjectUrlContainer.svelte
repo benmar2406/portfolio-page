@@ -5,7 +5,6 @@
 
 <div class="url-section">
 {#each urls as url}
-        {console.log(url)}
         <div class="url-container">
             <h3>{url[0]}:</h3>
             <div class="project-urls">
