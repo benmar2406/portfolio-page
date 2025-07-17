@@ -5,9 +5,11 @@ const config = {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: 'index.html'
+      fallback: 'index.html' // required for deep-link refreshes
     }),
-
+    paths: {
+      base: '' // you're serving from the domain root
+    }
   }
 };
 
