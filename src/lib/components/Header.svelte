@@ -1,9 +1,31 @@
+<script>
+
+    let currentPathname = $state(window.location.pathname)
+
+    const navButtons = [
+            {url: '/projects', name: 'Projekte'},
+            {url: '/about', name: 'About'},
+            {url: '/contact', name: 'Kontakt'}
+        ]
+    const handleButtonClick = (pathname) => {
+        currentPathname = pathname;
+    }
+    
+</script>
+
+
 <header class="index-navigation-box">
     <h1 id="title">Benedikt Martini | Informationsdesign</h1>
     <nav class="navigation-bar">
-        <a class="nav-link" href="/projects">Projekte</a>
-        <a class="nav-link" id="skills-nav" href="/about">About</a>
-        <a class="nav-link" href="/contact">Kontakt</a>
+        {#each navButtons as button}
+            <a 
+                class="nav-link"
+                class:active={button.url === currentPathname} 
+                href={button.url}
+                onclick={() => handleButtonClick(button.url)}
+            >{button.name}
+            </a>
+        {/each}
     </nav>
 </header>   
 
@@ -39,11 +61,24 @@
         z-index: 6;
     }
 
+    .nav-link {          
+        margin: 0.1rem;
+        padding: 10px;
+        border: 3px solid var(--white);
+        width:fit-content;
+        transition: all 0.3s;
+    }
 
-        @media screen and (min-width: 800px) {
-            .navigation-bar {
-                justify-content: space-evenly;
-            }
+    .nav-link:hover, .nav-link.active {          
+        background-color: var(--white);
+        color: var(--accent)
+    }
+
+
+    @media screen and (min-width: 800px) {
+        .navigation-bar {
+            justify-content: space-evenly;
         }
+    }
 
 </style>

@@ -64,6 +64,10 @@ button:hover {
   background-color: var(--white);
 }
 
+h2 {
+  overflow-wrap: break-word;
+}
+
 
 a {
   text-decoration: none;
