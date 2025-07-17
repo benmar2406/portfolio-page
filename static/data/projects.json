@@ -60,7 +60,7 @@
             "previewImage": "/images/projects-preview/prev_portfolio.png",
             "article": {
                 "title": "Portfolio Page",
-                "content": "<p>Die Projektseiten werden aus einer hinterlegten Liste durch ein dynamisches und modularisiertes Projektlaylout automatisiert gerendert. Perspektivisch soll ein Headless CMS integriert werden.</p>"
+                "content": "<p>Die Website wurde mit Svelte 5 und SvelteKit entwickelt, um eine reibungslose Benutzererfahrung und dynamisches Routing zu gewährleisten.</p><p>Projektseiten werden automatisch durch ein dynamisches Layout-Template gerendert, was eine effiziente und konsistente Darstellung ermöglicht. Ein modularer Aufbau erlaubt es, Inhalte flexibel zu integrieren und anzupassen.</p><p>Aktuell wird der Content aus einem JSON-File bezogen, mit dem Ziel, in Zukunft auf ein Headless CMS wie Strapi umzusteigen, um die Inhalte noch einfacher verwalten zu können.</p><p>Die Website ist in zwei Hauptbereiche unterteilt: (app) und (entry). Während (entry) ein einzigartiges Layout bietet, nutzt (app) ein globales Grid-Layout, bestehend aus Header, Main und Footer, um eine konsistente Benutzerführung zu gewährleisten.</p>"
             },
             "components": ["article", "projectUrls", "techStack"],
             "data": {

@@ -1,15 +1,25 @@
 <script>
+    import { onMount } from "svelte";
 
-    let currentPathname = $state(window.location.pathname)
+    let currentPathname = $state(null);
 
+        
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
             {url: '/contact', name: 'Kontakt'}
         ]
+    
     const handleButtonClick = (pathname) => {
         currentPathname = pathname;
-    }
+    }   
+
+    onMount(() => {
+        currentPathname = window.location.pathname.slice(0, -1);
+        
+        console.log(currentPathname)
+    });
+   
     
 </script>
 
