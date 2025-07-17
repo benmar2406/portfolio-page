@@ -16,8 +16,6 @@
 
     onMount(() => {
         currentPathname = window.location.pathname.slice(0, -1);
-        
-        console.log(currentPathname)
     });
    
     
