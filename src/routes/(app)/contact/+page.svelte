@@ -60,7 +60,10 @@
 		height: 2rem;
 		border-radius: 0.8rem;
 		background-color: var(--white);
-		    box-shadow: none;
+		box-shadow: none;
+		appearance: none;
+		-webkit-appearance: none; 
+		-moz-appearance: none;    
 
 	}
 

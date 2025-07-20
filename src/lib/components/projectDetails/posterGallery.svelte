@@ -25,8 +25,15 @@
             document.body.style.overflow = 'auto'
         }    
   }
-</script>
 
+  const closeResizedImageOnEsc = (event) => {
+    if (event.key == "Escape") {
+       closeResizedImage();
+    } 
+  }
+
+</script>
+<svelte:window onkeydown={closeResizedImageOnEsc} />
 <!---->
 <div class="carousel-container">
 <div class="selected-poster-container">
@@ -62,6 +69,7 @@
         <div 
             class="overlay"
             onclick={closeResizedImage}
+            onkeydown={closeResizedImageOnEsc}
         >
             <div class="image-scroll-wrapper">
                 <img 

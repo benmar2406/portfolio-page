@@ -38,9 +38,16 @@
     document.body.style.overflow = 'auto'
     }    
   }
+
+  const c = (event) => {
+    if (event.key == "Escape") {
+       closeResizedImage();
+    } 
+  }
   
 </script>
 
+<svelte:window onkeydown={closeResizedImageOnEsc} />
 
 <div class="image-board">
   {#each images as image, index}
