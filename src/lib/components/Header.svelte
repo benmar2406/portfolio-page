@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
-
-    let currentPathname = $state(null);
+    import { page } from '$app/stores'; // ← this is all you need
 
         
     const navButtons = [
@@ -9,15 +8,8 @@
             {url: '/about', name: 'About'},
             {url: '/contact', name: 'Kontakt'}
         ]
+    $inspect($page.url.pathname.slice(0, -1))
     
-    const handleButtonClick = (pathname) => {
-        currentPathname = pathname;
-    }   
-
-    onMount(() => {
-        currentPathname = window.location.pathname.slice(0, -1);
-    });
-   
     
 </script>
 
@@ -28,9 +20,8 @@
         {#each navButtons as button}
             <a 
                 class="nav-link"
-                class:active={button.url === currentPathname} 
+                class:active={$page.url.pathname.slice(0, -1) === button.url} 
                 href={button.url}
-                onclick={() => handleButtonClick(button.url)}
             >{button.name}
             </a>
         {/each}

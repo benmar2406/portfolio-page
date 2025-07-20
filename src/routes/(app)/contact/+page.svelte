@@ -1,21 +1,28 @@
 <form class="form" action="https://form.taxi/s/sm58351s" method="POST" accept-charset="UTF-8">
-	<fieldset style="border: 0px;">
+	<fieldset>
 		<label>
 			Name
 			<br />
-			<input class="formfield" type="text" name="Name" required />
+			<input class="form-field" type="text" name="Name" required />
 		</label>
 		<br />
 		<br />
 		<label>
 			E-Mail-Adresse<br />
-			<input class="formfield" type="email" name="E-Mail" required />
+			<input class="form-field" type="email" name="E-Mail" required />
 		</label>
 		<br />
 		<br />
 		<label>
 			Deine Nachricht<br />
-			<textarea class="formfield" rows="3" name="Nachricht" required></textarea>
+			<textarea 
+				class="text-field" 
+				maxlength="1000" 
+				rows="7" 
+				colums=12 
+				name="Nachricht" 
+				required>
+			</textarea>
 		</label>
 		<br />
 		<br />
@@ -37,7 +44,7 @@
 
 <style>
 	.form {
-		border: 3px solid white;
+		border: 3px solid var(--white);
         margin: auto;
         padding: 1rem;
         max-width: 350px;
@@ -48,11 +55,37 @@
 		line-height: 0.5rem;
 	}
 
-	.formfield {
+	.form-field {
 		width: 100%;
+		height: 2rem;
+		border-radius: 0.8rem;
+		background-color: var(--white);
+		    box-shadow: none;
+
+	}
+
+	.form-field:focus {
+		width: 100%;
+		border: 3px solid var(--accent);
+		outline: none;
+	}
+
+	fieldset {
+		border: 0px;
+	}
+
+	.text-field {
+		width: 100%;
+		border-radius: 0.8rem;
+		resize: none;
+		border: 3px solid var(--accent);
+		outline: none;
+		background-color: var(--white);
+
 	}
 
     button {
         margin: 0.6rem;
     }
+
 </style>

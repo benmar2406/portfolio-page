@@ -60,7 +60,7 @@
 			{/if}
 			{#if comp === 'techStack'}
 				<TechStack 
-					stnpackitems={loadedProject.data.stack} 
+					stackitems={loadedProject.data.stack} 
 				/>
 			{/if}
 			
