@@ -40,20 +40,30 @@
     <img 
         src={posters[selectedIndex][0]} 
         alt={posters[selectedIndex][1]}
+        aria-label="Selected poster"
         class="selected-poster"
         onclick={() => handleImageClick(posters[selectedIndex][0])}
     >
 </div>
     
-<div class="carousel">
+<div 
+    class="carousel"
+    role="list" 
+    aria-label="Poster thumbnails"
+>
     {#if posters.length > 1}
     {#each posters as poster, index}
         <div 
             class="image-container"
+             tabindex="0"
+            role="listitem"
+            aria-label={`Poster ${index + 1}${selectedIndex === index ? ' (selected)' : ''}`}
             class:active={selectedIndex === index} 
             onclick={() => handlePosterSelect(index)}
             onKeydown={() => handlePosterSelect(index)}
-            
+            onkeydown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') handlePosterSelect(index);
+            }}     
         >
             <img 
                 class="poster" 
@@ -67,6 +77,10 @@
     </div>
     {#if imageActive}
         <div 
+            role="dialog"
+            aria-modal="true"
+            aria-label="Expanded poster view. Press Escape to close."
+            tabindex="0"
             class="overlay"
             onclick={closeResizedImage}
             onkeydown={closeResizedImageOnEsc}
