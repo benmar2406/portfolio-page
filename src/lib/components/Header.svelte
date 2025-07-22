@@ -7,9 +7,7 @@
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
             {url: '/contact', name: 'Kontakt'}
-        ]
-    $inspect($page.url.pathname.slice(0, -1))
-    
+        ]    
     
 </script>
 
