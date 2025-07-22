@@ -1,38 +1,13 @@
-# sv
+# Portfolio Page
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Simple portfolio page created with Svelte 5 and Svelte Kit which uses dynamic routing and page creating creation
 
-## Creating a project
+## Functionality
 
-If you're seeing this, you've probably already done this step. Congrats!
+Project pages are automatically rendered using a dynamic layout template, which enables efficient and consistent display. A modular structure allows content to be flexibly integrated and adapted.
 
-```bash
-# create a new project in the current directory
-npx sv create
+Currently, content is sourced from a JSON file, with the aim of switching to a headless CMS such as Strapi in the future to make content management even easier.
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Setup
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The website is divided into two main areas: (app) and (entry). While (entry) offers a unique layout, (app) uses a global grid layout consisting of header, main, and footer to ensure consistent user guidance.
