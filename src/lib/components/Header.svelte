@@ -8,11 +8,14 @@
 
     let elementToObserve = $state(null);
     let observer = $state(null);
-    let renderNav = $state(false);
-    let notRenderElems = $derived($page.url.pathname != "/" ? true : false)
-
     let renderTimeout = 4000;
+
+    let renderNav = $state(false);
+    let base = $derived($page.url.pathname === "/" ? true : false) //animate only when page is base, also add fixed navigation when page is not base
     
+    let titleHeight = $state(false);
+    let scrollY = $state(0);
+
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
@@ -20,42 +23,45 @@
         ];
 
     onMount(() => {
+
         observer = useVisibilityObserver(elementToObserve);
 
         $effect(() => {
             if (observer) {
-            setTimeout(() => {
-                renderNav = true;
-            }, renderTimeout)
-        }});
-    
+                setTimeout(() => {
+                    renderNav = true;
+                }, renderTimeout)
+            }});
     });
-
-    $inspect($page.url.pathname)
     
 </script>
 
+<svelte:window bind:scrollY={scrollY} />
 
 <header class="index-navigation-box" bind:this={elementToObserve}>
-    {#if (observer && observer.isVisible) || notRenderElems}
+    {#if (observer && observer.isVisible) || !base}
         <h1 
             transition:typewriter 
             id="title"
+            bind:clientHeight={titleHeight}
             >Benedikt Martini | Informationsdesign
         </h1>
     {/if}
-    <nav class="navigation-bar">
-            {#each navButtons as button, index}
-                {#if renderNav || notRenderElems}
-                <a 
-                    class="nav-link"
-                    class:active={$page.url.pathname.slice(0, -1) === button.url} 
-                    href={button.url}
-                    transition:fade={{ duration: 900, delay: 400 * index}}
-                >{button.name}
-                </a>
-                {/if}
-            {/each}
+    <nav 
+        class="navigation-bar"
+        class:fixed={scrollY >= titleHeight && !base} 
+    >
+        {#each navButtons as button, index}
+            {#if renderNav || !base}
+            <a 
+                class="nav-link"
+                class:active={$page.url.pathname.slice(0, -1) === button.url} 
+                href={button.url}
+                transition:fade={{ duration: 900, delay: 400 * index}}
+            >{button.name}
+            </a>
+            {/if}
+        {/each}
     </nav>
 </header>   
 
@@ -73,27 +79,19 @@
         align-items: center;
         margin: auto;
         margin-bottom: 4rem;
-        z-index: 5;
+        z-index: 1000;
         min-width: 300px;
-        width: 50vw;
+        width: 100%;
         height: 4rem;
-        }
-
-    .fixed-navigation-bar {
-        display: flex;
         justify-content: space-evenly;
-        align-items: center;
-        width: 90%;
+    }
+
+    .fixed {
         position: fixed;
         top: 0;
         left: 50%;
-        height: 70px;
-        z-index: 1;
         background-color: var(--background);
         transform: translateX(-50%);
-        z-index: 6;
-
-        
     }
 
     .nav-link {          
