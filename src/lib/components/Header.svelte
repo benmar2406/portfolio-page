@@ -1,28 +1,61 @@
 <script>
     import { onMount } from "svelte";
-    import { page } from '$app/stores'; // ← this is all you need
+    import { page } from '$app/stores'; 
+    import typewriter from "../../utils/typewriterTransition";
+    import { fade } from "svelte/transition";
+    import { useVisibilityObserver } from "../../utils/useVisibilityObserver.svelte";
+	import { render } from "svelte/server";
 
-        
+    let elementToObserve = $state(null);
+    let observer = $state(null)
+    let renderNav = $state(false);
+    let notRenderElems = $derived($page.url.pathname != "/" ? true : false)
+
+    let renderTimeout = 4000;
+    
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
             {url: '/contact', name: 'Kontakt'}
         ];
+
+    onMount(() => {
+        observer = useVisibilityObserver(elementToObserve);
+
+        $effect(() => {
+            if (observer) {
+            setTimeout(() => {
+                renderNav = true;
+            }, renderTimeout)
+        }});
+    
+    });
+
+    $inspect($page.url.pathname)
     
 </script>
 
 
-<header class="index-navigation-box">
-    <h1 id="title">Benedikt Martini | Informationsdesign</h1>
+<header class="index-navigation-box" bind:this={elementToObserve}>
+    {#if (observer && observer.isVisible) || notRenderElems}
+        <h1 
+            transition:typewriter 
+            id="title"
+            >Benedikt Martini | Informationsdesign
+        </h1>
+    {/if}
     <nav class="navigation-bar">
-        {#each navButtons as button}
-            <a 
-                class="nav-link"
-                class:active={$page.url.pathname.slice(0, -1) === button.url} 
-                href={button.url}
-            >{button.name}
-            </a>
-        {/each}
+            {#each navButtons as button, index}
+                {#if renderNav || notRenderElems}
+                <a 
+                    class="nav-link"
+                    class:active={$page.url.pathname.slice(0, -1) === button.url} 
+                    href={button.url}
+                    transition:fade={{ duration: 900, delay: 400 * index}}
+                >{button.name}
+                </a>
+                {/if}
+            {/each}
     </nav>
 </header>   
 
@@ -38,9 +71,12 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        margin: auto;
         margin-bottom: 4rem;
         z-index: 5;
+        min-width: 300px;
+        width: 50vw;
+        height: 4rem;
         }
 
     .fixed-navigation-bar {
@@ -56,6 +92,8 @@
         background-color: var(--background);
         transform: translateX(-50%);
         z-index: 6;
+
+        
     }
 
     .nav-link {          
