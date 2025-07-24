@@ -39,7 +39,7 @@
     }    
   }
 
-  const c = (event) => {
+    const closeResizedImageOnEsc = (event) => {
     if (event.key == "Escape") {
        closeResizedImage();
     } 

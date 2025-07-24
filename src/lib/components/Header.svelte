@@ -7,7 +7,7 @@
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
             {url: '/contact', name: 'Kontakt'}
-        ]    
+        ];
     
 </script>
 

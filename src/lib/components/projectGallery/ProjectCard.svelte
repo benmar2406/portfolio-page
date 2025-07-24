@@ -4,10 +4,10 @@
 
 
 <div class="project-card">
-    <img src={image} alt={title} />
     <a href="/projects/{slug}" class="project-link">
         <p class="project-title">{title}</p>
     </a>
+    <img src={image} alt={title} />
 </div>
 
 
@@ -43,7 +43,7 @@
         text-align: center;
     }
 
-    .project-link:hover {
+    .project-link:hover, .project-link:focus {
         opacity: 0.9;
     }
 

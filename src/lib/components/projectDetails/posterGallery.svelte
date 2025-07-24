@@ -33,8 +33,9 @@
   }
 
 </script>
+
 <svelte:window onkeydown={closeResizedImageOnEsc} />
-<!---->
+
 <div class="carousel-container">
 <div class="selected-poster-container">
     <img 
@@ -83,7 +84,6 @@
             tabindex="0"
             class="overlay"
             onclick={closeResizedImage}
-            onkeydown={closeResizedImageOnEsc}
         >
             <div class="image-scroll-wrapper">
                 <img 
