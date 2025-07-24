@@ -5,6 +5,8 @@
     import { fade } from "svelte/transition";
     import { useVisibilityObserver } from "../../utils/useVisibilityObserver.svelte";
 	import { render } from "svelte/server";
+    import { innerHeight } from "svelte/reactivity/window";
+    import { afterNavigate } from "$app/navigation";
 
     let elementToObserve = $state(null);
     let observer = $state(null);
@@ -14,6 +16,8 @@
     let base = $derived($page.url.pathname === "/" ? true : false) //animate only when page is base, also add fixed navigation when page is not base
     
     let titleHeight = $state(false);
+    let pageHeight = $state(0);
+	let pageHeightVh =  $state(0);
     let scrollY = $state(0);
 
     const navButtons = [
@@ -23,16 +27,31 @@
         ];
 
     onMount(() => {
+    
+    calculateHeights();
 
-        observer = useVisibilityObserver(elementToObserve);
+    observer = useVisibilityObserver(elementToObserve);
 
-        $effect(() => {
-            if (observer) {
-                setTimeout(() => {
-                    renderNav = true;
-                }, renderTimeout)
-            }});
+    $effect(() => {
+        if (observer) {
+            setTimeout(() => {
+                renderNav = true;
+            }, renderTimeout)
+        }});
     });
+
+    afterNavigate(() => {
+        calculateHeights();
+    });
+
+    const calculateHeights =() => {
+        pageHeight = document.documentElement.scrollHeight;
+        pageHeightVh = (pageHeight / innerHeight.current) * 100;
+    };
+
+  
+
+    $inspect(pageHeightVh)
     
 </script>
 
@@ -47,9 +66,10 @@
             >Benedikt Martini | Informationsdesign
         </h1>
     {/if}
+    <!-- only create fixed navigation when it is not base page and when the page has more height than viewport -->
     <nav 
         class="navigation-bar"
-        class:fixed={scrollY >= titleHeight && !base} 
+        class:fixed={scrollY >= titleHeight && !base && pageHeightVh >= 118} 
     >
         {#each navButtons as button, index}
             {#if renderNav || !base}
