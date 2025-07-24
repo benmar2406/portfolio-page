@@ -63,7 +63,7 @@
     }
 
     .playlist-button {
-        padding: 0.6rem; /* Set left and right padding to 0 */
+        padding: 0.6rem; 
         margin: 0.2rem;
         border: solid 0.02rem var(--white);
         width: 100%;
@@ -72,11 +72,12 @@
         color: var(--white);
         transition: all ease 0.6s;
         min-height: 4rem;
+        font-size: 0.8rem;
     }
 
     .playlist-button:hover, button.active {
         background-color: var(--accentOpaque);
-        font-size: 0.87rem;
+        font-size: 0.85rem;
     } 
 @media screen and (min-width: 900px) {
     .video-player {

@@ -7,7 +7,7 @@
 	import { render } from "svelte/server";
 
     let elementToObserve = $state(null);
-    let observer = $state(null)
+    let observer = $state(null);
     let renderNav = $state(false);
     let notRenderElems = $derived($page.url.pathname != "/" ? true : false)
 

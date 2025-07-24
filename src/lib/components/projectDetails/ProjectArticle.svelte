@@ -1,12 +1,25 @@
 <script>
+import { onMount } from "svelte";
+import { useVisibilityObserver } from "../../../utils/useVisibilityObserver.svelte";
+import { slide } from "svelte/transition";
+
 let { title, content  } = $props();
+
+let elementToObserve = $state(null);
+let observer = $state(null);
+let renderElements = $state(false);
+
 </script>
 
-<article class="project-description">
-    <h2>{title}</h2>
-    <div>{@html content}</div>
-</article>
+<div class="render-container">
+    <article class="project-description">
+        <h2>{title}</h2>
+        <div>{@html content}</div>
+    </article>
+</div>
+
 <style>
+
     h2 {
         font-size: 1.8rem;
     }
