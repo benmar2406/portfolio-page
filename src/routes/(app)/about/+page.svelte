@@ -25,9 +25,6 @@
 </div>
 
 <style>
-    .about-container {
-        min-height: 100vh;
-    }
 
     .about-description {
         margin: 2rem 0;

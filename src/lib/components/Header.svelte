@@ -109,7 +109,8 @@
     .fixed {
         position: fixed;
         top: 0;
-        left: 50%;
+        left: 50%; 
+        width: 90%;
         background-color: var(--background);
         transform: translateX(-50%);
     }

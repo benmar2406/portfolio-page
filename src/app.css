@@ -19,7 +19,6 @@
     --accentOpaque: rgba(95, 158, 160, 0.8)
 }
 
-
 html, body {
   height: 100%; 
   margin: 0;
@@ -27,7 +26,6 @@ html, body {
   box-sizing: border-box;
   scrollbar-gutter: stable;
 }
-
 
 body {
   font-family: 'Mono Space', 'Courier New', Courier, monospace;
