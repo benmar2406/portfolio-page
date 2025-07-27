@@ -5,7 +5,7 @@
     import { fade } from "svelte/transition";
     import { useVisibilityObserver } from "../../utils/useVisibilityObserver.svelte";
 	import { render } from "svelte/server";
-    import { innerHeight } from "svelte/reactivity/window";
+    import { innerHeight, innerWidth } from "svelte/reactivity/window";
     import { afterNavigate } from "$app/navigation";
 
     let elementToObserve = $state(null);
@@ -20,6 +20,8 @@
 	let pageHeightVh =  $state(0);
     let scrollY = $state(0);
 
+    let smallScreen = $state(true);
+
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
             {url: '/about', name: 'About'},
@@ -28,30 +30,33 @@
 
     onMount(() => {
     
-    calculateHeights();
+        calculateHeights();
 
-    observer = useVisibilityObserver(elementToObserve);
+        observer = useVisibilityObserver(elementToObserve);
 
-    $effect(() => {
-        if (observer) {
-            setTimeout(() => {
-                renderNav = true;
-            }, renderTimeout)
-        }});
+        $effect(() => {
+            if (observer) {
+                setTimeout(() => {
+                    renderNav = true;
+                }, renderTimeout)
+            }});
+
+        
+        $effect(() => {
+            // used to display h1 html content depending on innerwidth: on smallscreens title is displayed in two rows and looks better without '|'
+            innerWidth.current <= 600 ? smallScreen = true : smallScreen = false; 
+        })
+
     });
 
     afterNavigate(() => {
         calculateHeights();
     });
 
-    const calculateHeights =() => {
+    const calculateHeights = () => {
         pageHeight = document.documentElement.scrollHeight;
         pageHeightVh = (pageHeight / innerHeight.current) * 100;
     };
-
-  
-
-    $inspect(pageHeightVh)
     
 </script>
 
@@ -63,13 +68,13 @@
             transition:typewriter 
             id="title"
             bind:clientHeight={titleHeight}
-            >Benedikt Martini | Informationsdesign
+            >{smallScreen ? `Benedikt Martini Informationsdesign` : `Benedikt Martini | Informationsdesign`}
         </h1>
     {/if}
     <!-- only create fixed navigation when it is not base page and when the page has more height than viewport -->
     <nav 
         class="navigation-bar"
-        class:fixed={scrollY >= titleHeight && !base && pageHeightVh >= 118} 
+        class:fixed={scrollY >= titleHeight && !base && pageHeightVh >= 100 + titleHeight} 
     >
         {#each navButtons as button, index}
             {#if renderNav || !base}
