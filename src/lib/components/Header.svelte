@@ -7,6 +7,7 @@
 	import { render } from "svelte/server";
     import { innerHeight, innerWidth } from "svelte/reactivity/window";
     import { afterNavigate } from "$app/navigation";
+    import { scrollY } from "svelte/reactivity/window";
 
     let elementToObserve = $state(null);
     let observer = $state(null);
@@ -18,7 +19,6 @@
     let titleHeight = $state(false);
     let pageHeight = $state(0);
 	let pageHeightVh =  $state(0);
-    let scrollY = $state(0);
 
     let smallScreen = $state(true);
 
@@ -60,8 +60,6 @@
     
 </script>
 
-<svelte:window bind:scrollY={scrollY} />
-
 <header class="index-navigation-box" bind:this={elementToObserve}>
     {#if (observer && observer.isVisible) || !base}
         <h1 
@@ -74,7 +72,7 @@
     <!-- only create fixed navigation when it is not base page and when the page has more height than viewport -->
     <nav 
         class="navigation-bar"
-        class:fixed={scrollY >= titleHeight && !base && pageHeightVh >= 100 + titleHeight} 
+        class:fixed={scrollY.current >= titleHeight && !base && pageHeightVh >= 100 + titleHeight} 
     >
         {#each navButtons as button, index}
             {#if renderNav || !base}
