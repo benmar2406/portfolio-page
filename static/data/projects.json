@@ -60,7 +60,7 @@
             "previewImage": "/images/projects-preview/prev_portfolio.png",
             "article": {
                 "title": "Portfolio Page",
-                "content": "<p>Die Website wurde mit Svelte 5 und SvelteKit erstellt. Ein modularer Aufbau erlaubt es, Inhalte flexibel zu integrieren und anzupassen.</p><p>Projektseiten werden automatisch durch ein dynamisches Layout-Template gerendert, was eine effiziente und konsistente Darstellung ermöglicht. Ein modularer Aufbau erlaubt es, Inhalte flexibel zu integrieren und anzupassen.</p><p>Aktuell wird der Content aus einem JSON-File bezogen, mit dem Ziel, in Zukunft auf ein Headless CMS wie Strapi umzusteigen, um die Inhalte noch einfacher verwalten zu können.</p><p>Die Website ist in zwei Hauptbereiche unterteilt: (app) und (entry). Während (entry) ein einzigartiges Layout bietet, nutzt (app) ein globales Grid-Layout, bestehend aus Header, Main und Footer, um eine konsistente Benutzerführung zu gewährleisten.</p>"
+                "content": "<p>Die Website wurde mit Svelte 5 und SvelteKit erstellt. Ein modularer Aufbau erlaubt es, Inhalte flexibel zu integrieren und anzupassen.</p><p>Projektseiten werden automatisch durch ein dynamisches Layout-Template gerendert, was eine effiziente und konsistente Darstellung ermöglicht.</p><p>Aktuell wird der Content aus einem JSON-File bezogen, mit dem Ziel, in Zukunft auf ein Headless CMS wie Strapi umzusteigen, um die Inhalte noch einfacher verwalten zu können.</p><p>Die Website ist in zwei Hauptbereiche unterteilt: (app) und (entry). Während (entry) ein einzigartiges Layout bietet, nutzt (app) ein globales Grid-Layout, bestehend aus Header, Main und Footer, um eine konsistente Benutzerführung zu gewährleisten.</p>"
             },
             "components": ["article", "projectUrls", "techStack"],
             "data": {
@@ -128,6 +128,26 @@
                         ["/images/projects/003.jpg", "Visualisierung zum globalen Waffenhandel - Menschrenrechtsverletzungen in den größten Importländern"] 
                     ],
                 "stack": ["Adobe Illustrator", "Adobe InDesign", "Excel"] 
+            }
+        },
+
+        {
+            "slug": "project-13",
+            "name": "Datenvisualisierungen mit Tableau",  
+            "previewImage": "/images/projects-preview/prev_tableau.png",
+            "article": {
+                "title": "Datenvisualisierungen mit Tableau.",
+                "content": "<p>Diverse Infografiken, erstellt mit Tableau Public.</p>"
+            },
+            "components": ["article", "projectUrls", "techStack"],
+            "data": {
+                "stack": ["Tableau"],
+                "projectUrls": [
+    
+                    ["Vulkane", ["https://public.tableau.com/views/Vulkan/DEADLYVOLCANOES?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link", "Zur Grafik"]], 
+                    ["Bäume in NYC", ["https://public.tableau.com/views/TreesMoneyinNewYorkCity/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link", "Zur Grafik"]]
+                ],
+                "github": false
             }
         },
         

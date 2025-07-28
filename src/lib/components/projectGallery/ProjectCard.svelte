@@ -1,13 +1,41 @@
 <script>
-    let { title, image, slug } = $props()
+    import { fly } from "svelte/transition";
+    let { title, image, slug } = $props();
+
+    let imgLoaded = $state(false);
+    let animateTitle = $state(false);
+ 
 </script>
 
 
-<div class="project-card">
-    <a href="/projects/{slug}" class="project-link">
-        <p class="project-title">{title}</p>
-    </a>
-    <img src={image} alt={title} />
+<div 
+    class="project-card"
+    role="listitem"
+>
+    {#if imgLoaded}
+        <a 
+            href="/projects/{slug}" 
+            class="project-link"
+            onfocusleave={animateTitle = false}
+            onfocus={animateTitle = true}
+            onmouseover={animateTitle = true}
+            onmouseleave={animateTitle = false}
+        >        
+            {#if animateTitle}
+                <p 
+                    class="project-title"
+                    transition:fly={{ y: "200%", duration: 700 }}
+                >{title}
+                </p>
+            {/if}
+        </a>
+    {/if}
+    <img 
+         src={image} 
+         alt={title} 
+         onload={imgLoaded = true}
+         class:loaded={imgLoaded}
+    />
 </div>
 
 
@@ -25,6 +53,12 @@
         width: 100%;
         height: 100%;
         position: absolute;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+
+    .loaded {
+        opacity: 1;
     }
 
     .project-link {
@@ -49,6 +83,10 @@
 
     .project-title {
         padding: 0.4rem;
+    }
+
+     .project-title:focus {
+         opacity: 1;
     }
 
 

@@ -6,7 +6,9 @@
 </script>
 
 
-<section class="project-gallery">
+<section 
+    class="project-gallery"  
+    role="list">
 {#if loadedProjects}
     {#each loadedProjects as project}
         <ProjectCard 
