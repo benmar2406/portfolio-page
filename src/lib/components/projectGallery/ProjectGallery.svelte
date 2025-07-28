@@ -6,7 +6,7 @@
 </script>
 
 
-<section 
+<div 
     class="project-gallery"  
     role="list">
 {#if loadedProjects}
@@ -18,7 +18,7 @@
         />
     {/each}
 {/if }
-</section>
+</div>
 
 
 <style>

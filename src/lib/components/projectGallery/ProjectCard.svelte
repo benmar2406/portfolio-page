@@ -12,7 +12,6 @@
     class="project-card"
     role="listitem"
 >
-    {#if imgLoaded}
         <a 
             href="/projects/{slug}" 
             class="project-link"
@@ -21,7 +20,7 @@
             onmouseover={animateTitle = true}
             onmouseleave={animateTitle = false}
         >        
-            {#if animateTitle}
+            {#if imgLoaded && animateTitle}
                 <p 
                     class="project-title"
                     transition:fly={{ y: "200%", duration: 700 }}
@@ -29,7 +28,6 @@
                 </p>
             {/if}
         </a>
-    {/if}
     <img 
          src={image} 
          alt={title} 
