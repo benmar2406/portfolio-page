@@ -21,11 +21,11 @@
             onmouseleave={animateTitle = false}
         >        
             {#if imgLoaded && animateTitle}
-                <p 
+                <h2 
                     class="project-title"
                     transition:fly={{ y: "200%", duration: 700 }}
                 >{title}
-                </p>
+                </h2>
             {/if}
         </a>
     <img 
@@ -81,6 +81,7 @@
 
     .project-title {
         padding: 0.4rem;
+        font-size: 1.1rem;
     }
 
      .project-title:focus {
