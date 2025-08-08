@@ -16,11 +16,11 @@
     let renderNav = $state(false);
     let base = $derived($page.url.pathname === "/" ? true : false) 
     
-    let titleHeight = $state(false);
+    let titleHeight = $state();
     let pageHeight = $state(0);
-	let pageHeightVh =  $state(0);
+	let pageHeightVh =  $state(10);
+    let hasScrollRoom = $state(false);
 
-    let smallScreen = $state(false);
 
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
@@ -48,14 +48,15 @@
 
     const calculateHeights = () => {
         pageHeight = document.documentElement.scrollHeight;
-        pageHeightVh = (pageHeight / innerHeight.current) * 100;
+        hasScrollRoom = (pageHeight - innerHeight.current) > titleHeight;
     };
-    
+
 </script>
 
 <header bind:this={elementToObserve}>
-    <div class="title-container">
-        {#if (observer && observer.isVisible) || !base}
+    <div class="title-container"
+    >
+        {#if (observer && observer.isVisible) || !base || innerWidth.current <= 600}
             <h1 
                 id="title"
                 bind:clientHeight={titleHeight}
@@ -69,7 +70,7 @@
     <!-- only create fixed navigation when it is not base page and when the page has more height than viewport -->
     <nav 
         class="navigation-bar"
-        class:fixed={scrollY.current >= titleHeight && !base && pageHeightVh >= 100 + titleHeight} 
+        class:fixed={scrollY.current >= titleHeight && !base && hasScrollRoom} 
     >
         {#each navButtons as button, index}
             <a 
@@ -95,8 +96,8 @@
         min-height: 7rem;
         height: fit-content;
         display: flex;
+        margin-top: 1rem;
     }
-
 
     .navigation-bar {
         display: flex;
@@ -108,7 +109,6 @@
         z-index: 1000;
         height: 4rem;
         justify-content: space-evenly;
-        width: 90vw;
     }
 
     .fixed {
@@ -117,6 +117,7 @@
         left: 50%; 
         background-color: var(--background);
         transform: translateX(-50%);
+        width: 100%;
     }
 
     .nav-link {          
@@ -134,13 +135,15 @@
 
       @media screen and (min-width: 600px) {
         .navigation-bar {
-            width: 550px;
-
+            min-width: 550px;
+            width: 100%;
         }
 
         .title-container {
             min-height: 5rem;
         }
+
+  
     }
 
 </style>

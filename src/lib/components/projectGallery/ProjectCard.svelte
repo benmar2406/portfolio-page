@@ -15,15 +15,15 @@
         <a 
             href="/projects/{slug}" 
             class="project-link"
-            onfocusleave={animateTitle = false}
-            onfocus={animateTitle = true}
-            onmouseover={animateTitle = true}
-            onmouseleave={animateTitle = false}
+            onfocus={() => (animateTitle = true)}
+            onblur={() => (animateTitle = false)}
+            onpointerenter={() => (animateTitle = true)}   
+            onpointerleave={() => (animateTitle = false)}
         >        
             {#if imgLoaded && animateTitle}
                 <h2 
                     class="project-title"
-                    transition:fly={{ y: "200%", duration: 700 }}
+                    transition:fly={{ y: 100, duration: 700 }}
                 >{title}
                 </h2>
             {/if}
@@ -34,7 +34,7 @@
     <img 
          src={image} 
          alt={title} 
-         onload={imgLoaded = true}
+         onload={() => (imgLoaded = true)}
          class:loaded={imgLoaded}
     />
 </div>
