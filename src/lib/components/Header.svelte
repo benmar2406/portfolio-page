@@ -14,13 +14,13 @@
     let renderTimeout = 4000;
 
     let renderNav = $state(false);
-    let base = $derived($page.url.pathname === "/" ? true : false) //animate only when page is base, also add fixed navigation when page is not base
+    let base = $derived($page.url.pathname === "/" ? true : false) 
     
     let titleHeight = $state(false);
     let pageHeight = $state(0);
 	let pageHeightVh =  $state(0);
 
-    let smallScreen = $state(true);
+    let smallScreen = $state(false);
 
     const navButtons = [
             {url: '/projects', name: 'Projekte'},
@@ -40,13 +40,6 @@
                     renderNav = true;
                 }, renderTimeout)
             }});
-
-        
-        $effect(() => {
-            // used to display h1 html content depending on innerwidth: on smallscreens title is displayed in two rows and looks better without '|'
-            innerWidth.current <= 600 ? smallScreen = true : smallScreen = false; 
-        })
-
     });
 
     afterNavigate(() => {
@@ -60,30 +53,31 @@
     
 </script>
 
-<header class="index-navigation-box" bind:this={elementToObserve}>
-    {#if (observer && observer.isVisible) || !base}
-        <h1 
-            transition:typewriter 
-            id="title"
-            bind:clientHeight={titleHeight}
-            >{smallScreen ? `Benedikt Martini Informationsdesign` : `Benedikt Martini | Informationsdesign`}
-        </h1>
-    {/if}
+<header bind:this={elementToObserve}>
+    <div class="title-container">
+        {#if (observer && observer.isVisible) || !base}
+            <h1 
+                id="title"
+                bind:clientHeight={titleHeight}
+                transition:typewriter
+            >
+                Benedikt Martini | Informationsdesign
+            </h1>
+        {/if}
+    </div>
+
     <!-- only create fixed navigation when it is not base page and when the page has more height than viewport -->
     <nav 
         class="navigation-bar"
         class:fixed={scrollY.current >= titleHeight && !base && pageHeightVh >= 100 + titleHeight} 
     >
         {#each navButtons as button, index}
-            {#if renderNav || !base}
             <a 
                 class="nav-link"
                 class:active={$page.url.pathname.slice(0, -1) === button.url} 
                 href={button.url}
-                transition:fade={{ duration: 900, delay: 400 * index}}
             >{button.name}
             </a>
-            {/if}
         {/each}
     </nav>
 </header>   
@@ -92,8 +86,17 @@
     #title {
         font-size: 1.5rem;
         text-align: center;
-        margin: 2rem;
+        margin: 1rem auto;
+        align-items: center;
+        justify-content: center;
     }
+
+    .title-container {
+        min-height: 7rem;
+        height: fit-content;
+        display: flex;
+    }
+
 
     .navigation-bar {
         display: flex;
@@ -103,17 +106,15 @@
         margin: auto;
         margin-bottom: 4rem;
         z-index: 1000;
-        min-width: 300px;
-        width: 100%;
         height: 4rem;
         justify-content: space-evenly;
+        width: 90vw;
     }
 
     .fixed {
         position: fixed;
         top: 0;
         left: 50%; 
-        width: 90%;
         background-color: var(--background);
         transform: translateX(-50%);
     }
@@ -131,10 +132,14 @@
         color: var(--accent)
     }
 
-
-    @media screen and (min-width: 800px) {
+      @media screen and (min-width: 600px) {
         .navigation-bar {
-            justify-content: space-evenly;
+            width: 550px;
+
+        }
+
+        .title-container {
+            min-height: 5rem;
         }
     }
 
