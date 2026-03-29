@@ -207,15 +207,15 @@
         padding-left: 3rem;
     }
 
-    .chat-urls {
+    a {
         color: var(--background)
     }
 
-    .chat-urls:visited {
+    a:visited {
         color: var(--background)
     }
 
-    .chat-urls:active {
+    a:active {
         color: var(--background)
     }
 
