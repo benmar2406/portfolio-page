@@ -204,7 +204,7 @@
         border-bottom-left-radius: 0.2rem;
         height: fit-content;
         width: 90%;
-        padding-left: 3rem;
+        padding-left: 1rem;
     }
 
     a {
