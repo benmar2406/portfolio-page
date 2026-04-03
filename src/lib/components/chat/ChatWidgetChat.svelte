@@ -221,7 +221,6 @@
 
     .loading-indicator {
         color: var(--background);
-        align-self: flex-end;
         padding: 0.5rem;
         margin: 0.5rem;
     }
