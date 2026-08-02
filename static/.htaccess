@@ -1,0 +1,50 @@
+    # -------------------------------------------------------
+    # HTTPS erzwingen
+    # -------------------------------------------------------
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # -------------------------------------------------------
+    # Sicherheitsheader
+    # -------------------------------------------------------
+    <IfModule mod_headers.c>
+
+        # Kein Clickjacking
+        Header always set X-Frame-Options "DENY"
+
+        # Kein MIME-Type-Sniffing
+        Header always set X-Content-Type-Options "nosniff"
+
+        # Referrer einschränken
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+        # Browser-Features deaktivieren
+        Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+        # HSTS – Browser merkt sich HTTPS für 1 Jahr
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+        Header always set Content-Security-Policy "\
+            default-src 'self'; \
+            script-src 'self' 'unsafe-inline'; \
+            style-src 'self' 'unsafe-inline'; \
+
+    </IfModule>
+
+    # -------------------------------------------------------
+    # Verzeichnis-Listing deaktivieren
+    # -------------------------------------------------------
+    Options -Indexes
+
+    # -------------------------------------------------------
+    # Sensible Dateien sperren
+    # -------------------------------------------------------
+    <FilesMatch "(^\.htaccess|\.htpasswd|\.git|\.env|backup|\.log)">
+        Require all denied
+    </FilesMatch>
+
+    # -------------------------------------------------------
+    # Server-Version verstecken
+    # -------------------------------------------------------
+    ServerSignature Off
