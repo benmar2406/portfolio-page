@@ -28,3 +28,6 @@ src/lib/paraglide
 analysis/Miete.html
 static/analysis/Miete.html
 *.mov
+static/.htaccess
+static/htaccess
+.vscode/ssjs-setup.json
